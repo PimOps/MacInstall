@@ -23,7 +23,7 @@ check_brew
 
 # Install brew casks in alphabetical order, logging errors
 echo "Installing applications via Homebrew Cask..."
-for app in authy betterdisplay caffeine cloudflare-warp drawio grishka/grishka/neardrop lulu mac-mouse-fix microsoft-edge microsoft-office microsoft-teams openvpn-connect parallels postman powershell spotify telegram visual-studio-code WhatsApp zoom
+for app in betterdisplay caffeine cloudflare-warp drawio firefox mac-mouse-fix obsidian openvpn-connect postman powershell spotify telegram visual-studio-code WhatsApp zoom
 
 ## Removed apps: hiddenbar logi-options-plus miniconda
 
@@ -44,7 +44,12 @@ done
 
 # Install apps from the App Store in alphabetical order, logging errors
 echo "Installing applications from the App Store..."
-for id in 869223134 1352778147 1452453066 417375580
+for id in \
+    869223134  # KakaoTalk
+    1352778147 # Bitwarden
+    1452453066 # Hidden Bar
+    417375580  # BetterSnapTool
+    1495643653 # Working hours
 do
     mas install $id || echo "Failed to install App Store app with ID $id" >> setup_errors.log
 done
